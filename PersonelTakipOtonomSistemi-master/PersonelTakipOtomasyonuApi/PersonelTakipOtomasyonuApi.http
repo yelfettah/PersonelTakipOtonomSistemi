@@ -1,0 +1,6 @@
+@PersonelTakipOtomasyonuApi_HostAddress = http://localhost:5072
+
+GET {{PersonelTakipOtomasyonuApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:PersonelTakipOtonomSistemi.Converters"
+             x:Class="PersonelTakipOtonomSistemi.Views.PersonelGoruntule"
+             Title="Personel Görüntüle"
+             BackgroundColor="#F5F5F5"
+             Loaded="ContentPage_Loaded">
+    
+    <Grid RowDefinitions="Auto,*">
+        
+        <Frame Grid.Row="0" 
+               BackgroundColor="#4F3F9B" 
+               CornerRadius="15" 
+               Margin="20,20,20,10"
+               Padding="25,15"
+               HasShadow="True">
+            <HorizontalStackLayout>
+                <Image Source="personelgoruntule.png" WidthRequest="40" HeightRequest="40" VerticalOptions="Center"/>
+                <Label Text="PERSONEL LİSTESİ" 
+                       Margin="15,0,0,0"
+                       TextColor="White" 
+                       FontAttributes="Bold" 
+                       FontSize="20"
+                       VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+        </Frame>
+        <ScrollView Grid.Row="1" Padding="20">
+            <CollectionView x:Name="collectionViewPersonel" 
+                           Margin="0,10,0,0">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Margin="0,10,0,10" 
+                               BackgroundColor="{Binding aktifMi, Converter={StaticResource DurumRenkConverter}}"
+                               CornerRadius="15" 
+                               Padding="25"
+                               HasShadow="True"
+                               BorderColor="#E0E0E0">
+                            <VerticalStackLayout Spacing="15">
+                                
+                                <Frame BackgroundColor="{Binding aktifMi, Converter={StaticResource DurumBaslikRenkConverter}}" 
+                                       CornerRadius="10" 
+                                       Padding="20,15"
+                                       BorderColor="#4F3F9B">
+                                    <HorizontalStackLayout>
+                                        <Image Source="user.png" WidthRequest="35" HeightRequest="35" VerticalOptions="Center"/>
+                                        <VerticalStackLayout Margin="15,0,0,0" VerticalOptions="Center">
+                                            <Label Text="{Binding Ad, StringFormat='{0} {1}', Source={Binding Soyad}}" 
+                                                   FontSize="18" 
+                                                   FontAttributes="Bold" 
+                                                   TextColor="#4F3F9B"/>
+                                            <Label Text="{Binding Pozisyon}" 
+                                                   FontSize="14" 
+                                                   TextColor="#666"/>
+                                        </VerticalStackLayout>
+                                        <Label Text="{Binding PersonelID, StringFormat='ID: {0}'}" 
+                                               FontSize="16" 
+                                               FontAttributes="Bold" 
+                                               TextColor="#4F3F9B"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="EndAndExpand"/>
+                                    </HorizontalStackLayout>
+                                </Frame>
+
+                                <!-- Durum Etiketi -->
+                                <Frame BackgroundColor="{Binding aktifMi, Converter={StaticResource DurumEtiketRenkConverter}}"
+                                       CornerRadius="8"
+                                       Padding="15,8"
+                                       HorizontalOptions="Start">
+                                    <Label Text="{Binding aktifMi, StringFormat='Durum: {0}'}"
+                                           FontSize="14"
+                                           FontAttributes="Bold"
+                                           TextColor="White"/>
+                                </Frame>
+
+                                <!-- Personel Bilgileri -->
+                                <Grid ColumnDefinitions="*,*" ColumnSpacing="15">
+                                    
+                                    <!-- Sol Kolon -->
+                                    <VerticalStackLayout Grid.Column="0" Spacing="10">
+                                        <Label Text="Kişisel Bilgiler" 
+                                               FontSize="16" 
+                                               FontAttributes="Bold" 
+                                               TextColor="#4F3F9B"
+                                               Margin="0,0,0,5"/>
+                                        
+                                        <HorizontalStackLayout>
+                                            <Label Text="👤 Ad:" FontSize="14" TextColor="#666" FontAttributes="Bold" WidthRequest="80"/>
+                                            <Label Text="{Binding Ad}" FontSize="14" TextColor="#333"/>
+                                        </HorizontalStackLayout>
+                                        
+                                        <HorizontalStackLayout>
+                                            <Label Text="👤 Soyad:" FontSize="14" TextColor="#666" FontAttributes="Bold" WidthRequest="80"/>
+                                            <Label Text="{Binding Soyad}" FontSize="14" TextColor="#333"/>
+                                        </HorizontalStackLayout>
+                                        
+                                        <HorizontalStackLayout>
+                                            <Label Text="🆔 TC:" FontSize="14" TextColor="#666" FontAttributes="Bold" WidthRequest="80"/>
+                                            <Label Text="{Binding TCKimlikNo}" FontSize="14" TextColor="#333"/>
+                                        </HorizontalStackLayout>
+                                        
+                                        <HorizontalStackLayout>
+                                            <Label Text="🎂 Doğum:" FontSize="14" TextColor="#666" FontAttributes="Bold" WidthRequest="80"/>
+                                            <Label Text="{Binding DogumTarihi, StringFormat='{0:dd.MM.yyyy}'}" FontSize="14" TextColor="#333"/>
+                                        </HorizontalStackLayout>
+                                        
+                                        <HorizontalStackLayout>
+                                            <Label Text="📞 Telefon:" FontSize="14" TextColor="#666" FontAttributes="Bold" WidthRequest="80"/>
+                                            <Label Text="{Binding TelefonNo}" FontSize="14" TextColor="#333"/>
+                                        </HorizontalStackLayout>
+                                        
+                                        <HorizontalStackLayout>
+                                            <Label Text="📧 E-posta:" FontSize="14" TextColor="#666" FontAttributes="Bold" WidthRequest="80"/>
+                                            <Label Text="{Binding Eposta}" FontSize="14" TextColor="#333"/>
+                                        </HorizontalStackLayout>
+                                    </VerticalStackLayout>
+
+                                    <!-- Sağ Kolon -->
+                                    <VerticalStackLayout Grid.Column="1" Spacing="10">
+                                        <Label Text="İş Bilgileri" 
+                                               FontSize="16" 
+                                               FontAttributes="Bold" 
+                                               TextColor="#4F3F9B"
+                                               Margin="0,0,0,5"/>
+                                        
+                                        <HorizontalStackLayout>
+                                            <Label Text="🏢 Departman:" FontSize="14" TextColor="#666" FontAttributes="Bold" WidthRequest="90"/>
+                                            <Label Text="{Binding Departman}" FontSize="14" TextColor="#333"/>
+                                        </HorizontalStackLayout>
+                                        
+                                        <HorizontalStackLayout>
+                                            <Label Text="💼 Pozisyon:" FontSize="14" TextColor="#666" FontAttributes="Bold" WidthRequest="90"/>
+                                            <Label Text="{Binding Pozisyon}" FontSize="14" TextColor="#333"/>
+                                        </HorizontalStackLayout>
+                                        
+                                        <HorizontalStackLayout>
+                                            <Label Text="📅 İşe Başlama:" FontSize="14" TextColor="#666" FontAttributes="Bold" WidthRequest="90"/>
+                                            <Label Text="{Binding IseBaslamaTarihi, StringFormat='{0:dd.MM.yyyy}'}" FontSize="14" TextColor="#333"/>
+                                        </HorizontalStackLayout>
+                                        
+                                        <HorizontalStackLayout>
+                                            <Label Text="💰 Maaş:" FontSize="14" TextColor="#666" FontAttributes="Bold" WidthRequest="90"/>
+                                            <Label Text="{Binding Maas, StringFormat='{0:C}'}" FontSize="14" TextColor="#333"/>
+                                        </HorizontalStackLayout>
+                                        
+                                        <HorizontalStackLayout>
+                                            <Label Text="🏖️ Yıllık İzin:" FontSize="14" TextColor="#666" FontAttributes="Bold" WidthRequest="90"/>
+                                            <Label Text="{Binding yillikIzinHakki, StringFormat='{0} gün'}" FontSize="14" TextColor="#333"/>
+                                        </HorizontalStackLayout>
+                                    </VerticalStackLayout>
+                                </Grid>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
+    </Grid>
+
+    <!-- Resource Dictionary for Converters -->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!-- Durum Renk Converter -->
+            <converters:DurumRenkConverter x:Key="DurumRenkConverter"/>
+            <converters:DurumBaslikRenkConverter x:Key="DurumBaslikRenkConverter"/>
+            <converters:DurumEtiketRenkConverter x:Key="DurumEtiketRenkConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+</ContentPage>

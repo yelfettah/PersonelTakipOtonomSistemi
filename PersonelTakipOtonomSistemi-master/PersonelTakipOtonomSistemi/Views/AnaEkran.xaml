@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PersonelTakipOtonomSistemi.Views.AnaEkran"
+             Title="Personel Takip Sistemi"
+             BackgroundColor="#F5F5F5">
+
+    <Grid RowDefinitions="Auto,*,Auto">
+        
+        <!-- Arka plan görseli -->
+        <Image Grid.Row="0" Grid.RowSpan="3"
+               Aspect="AspectFill"
+               Source="anaekran1.jpg"
+               Opacity="0.4"/>
+        
+        <!-- Üst başlık -->
+        <Frame Grid.Row="0" 
+               BackgroundColor="#4F3F9B" 
+               CornerRadius="25" 
+               Margin="20,40,20,0"
+               Padding="30,15"
+               HasShadow="True">
+            <Label Text="PERSONEL TAKİP OTONOM SİSTEMİ" 
+                   VerticalOptions="Center" 
+                   HorizontalOptions="Center" 
+                   TextColor="White" 
+                   FontAttributes="Bold" 
+                   FontSize="24"
+                   FontFamily="Arial"/>
+        </Frame>
+        
+        <!-- Ana içerik -->
+        <StackLayout Grid.Row="1" 
+                     Spacing="30"
+                     VerticalOptions="Center"
+                     HorizontalOptions="Center">
+            
+            <!-- Hoş geldin mesajı -->
+            <StackLayout Spacing="10" Margin="0,0,0,20">
+                <Label Text="Hoş Geldiniz!" 
+                       FontSize="32" 
+                       FontAttributes="Bold" 
+                       TextColor="#2D3748"
+                       HorizontalOptions="Center"/>
+                <Label Text="Lütfen giriş türünüzü seçin" 
+                       FontSize="16" 
+                       TextColor="#718096"
+                       HorizontalOptions="Center"/>
+            </StackLayout>
+            
+            <!-- Yönetici Giriş Butonu -->
+            <Frame BackgroundColor="White" 
+                   CornerRadius="20" 
+                   Padding="0"
+                   HasShadow="True"
+                   WidthRequest="300">
+                <Grid RowDefinitions="Auto,Auto" Padding="30">
+                    <Image Grid.Row="0" 
+                           Source="ytnpanel.png" 
+                           HeightRequest="60" 
+                           WidthRequest="60"
+                           HorizontalOptions="Center"
+                           Margin="0,0,0,15"/>
+                    <StackLayout Grid.Row="1" Spacing="10">
+                        <Label Text="Yönetici Girişi" 
+                               FontSize="20" 
+                               FontAttributes="Bold" 
+                               TextColor="#2D3748"
+                               HorizontalOptions="Center"/>
+                        <Label Text="Sisteme yönetici olarak giriş yapın" 
+                               FontSize="12" 
+                               TextColor="#718096"
+                               HorizontalOptions="Center"/>
+                        <Button Text="GİRİŞ YAP" 
+                                BackgroundColor="#805AD5"
+                                TextColor="White"
+                                FontAttributes="Bold"
+                                FontSize="14"
+                                CornerRadius="12"
+                                HeightRequest="45"
+                                Margin="0,10,0,0"
+                                Clicked="Button_Clicked"/>
+                    </StackLayout>
+                </Grid>
+            </Frame>
+            
+            <!-- Personel Giriş Butonu -->
+            <Frame BackgroundColor="White" 
+                   CornerRadius="20" 
+                   Padding="0"
+                   HasShadow="True"
+                   WidthRequest="300">
+                <Grid RowDefinitions="Auto,Auto" Padding="30">
+                    <Image Grid.Row="0" 
+                           Source="personelmenu.png" 
+                           HeightRequest="60" 
+                           WidthRequest="60"
+                           HorizontalOptions="Center"
+                           Margin="0,0,0,15"/>
+                    <StackLayout Grid.Row="1" Spacing="10">
+                        <Label Text="Personel Girişi" 
+                               FontSize="20" 
+                               FontAttributes="Bold" 
+                               TextColor="#2D3748"
+                               HorizontalOptions="Center"/>
+                        <Label Text="Sisteme personel olarak giriş yapın" 
+                               FontSize="12" 
+                               TextColor="#718096"
+                               HorizontalOptions="Center"/>
+                        <Button Text="GİRİŞ YAP" 
+                                BackgroundColor="#667EEA"
+                                TextColor="White"
+                                FontAttributes="Bold"
+                                FontSize="14"
+                                CornerRadius="12"
+                                HeightRequest="45"
+                                Margin="0,10,0,0"
+                                Clicked="Button_Clicked_1"/>
+                    </StackLayout>
+                </Grid>
+            </Frame>
+            
+        </StackLayout>
+        
+        <!-- Alt bilgi -->
+        <StackLayout Grid.Row="2" 
+                     Spacing="5" 
+                     Margin="20,0,20,20"
+                     VerticalOptions="End">
+            <Label Text="© 2024 Personel Takip Otonom Sistemi" 
+                   FontSize="12" 
+                   TextColor="#718096"
+                   HorizontalOptions="Center"/>
+            <Label Text="Geliştirilmiş ve Modernize Edilmiş" 
+                   FontSize="10" 
+                   TextColor="#A0AEC0"
+                   HorizontalOptions="Center"/>
+        </StackLayout>
+        
+    </Grid>
+    
+</ContentPage>

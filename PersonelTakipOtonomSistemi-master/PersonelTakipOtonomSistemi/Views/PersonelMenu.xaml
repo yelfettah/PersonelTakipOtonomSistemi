@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PersonelTakipOtonomSistemi.Views.PersonelMenu"
+             Title="Personel Paneli"
+             BackgroundColor="#F5F5F5">
+
+    <ScrollView>
+        <Grid RowDefinitions="Auto,*,Auto" Padding="20">
+            
+            <!-- Üst Başlık -->
+            <Frame Grid.Row="0" 
+                   BackgroundColor="#4F3F9B" 
+                   CornerRadius="20" 
+                   Margin="0,20,0,20"
+                   Padding="30,20"
+                   HasShadow="True">
+                <HorizontalStackLayout>
+                    <Image Source="user.png" WidthRequest="40" HeightRequest="40" VerticalOptions="Center"/>
+                    <Label Text="PERSONEL PANELİ" 
+                           VerticalOptions="Center" 
+                           HorizontalOptions="Center" 
+                           TextColor="White" 
+                           FontAttributes="Bold" 
+                           FontSize="24"
+                           Margin="15,0,0,0"/>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <!-- Ana İçerik -->
+            <Grid Grid.Row="1" ColumnDefinitions="*,*" ColumnSpacing="20">
+                
+                <!-- Sol Panel - Kişisel Bilgiler -->
+                <Frame Grid.Column="0" 
+                       BackgroundColor="White" 
+                       CornerRadius="15" 
+                       Padding="25"
+                       HasShadow="True">
+                    <VerticalStackLayout Spacing="15">
+                        <Label Text="Kişisel Bilgiler" 
+                               FontSize="20" 
+                               FontAttributes="Bold" 
+                               TextColor="#4F3F9B"
+                               HorizontalOptions="Center"
+                               Margin="0,0,0,20"/>
+                        
+                        <!-- Ad -->
+                        <VerticalStackLayout Spacing="5">
+                            <Label Text="Ad" FontSize="14" TextColor="#666" FontAttributes="Bold"/>
+                            <Frame BackgroundColor="#F8F9FA" CornerRadius="10" Padding="15,10" BorderColor="#E9ECEF">
+                                <Entry x:Name="Ad" 
+                                       Placeholder="Adınız" 
+                                       BackgroundColor="Transparent"
+                                       TextColor="#333"
+                                       FontSize="16"/>
+                            </Frame>
+                        </VerticalStackLayout>
+
+                        <!-- Soyad -->
+                        <VerticalStackLayout Spacing="5">
+                            <Label Text="Soyad" FontSize="14" TextColor="#666" FontAttributes="Bold"/>
+                            <Frame BackgroundColor="#F8F9FA" CornerRadius="10" Padding="15,10" BorderColor="#E9ECEF">
+                                <Entry x:Name="Soyad" 
+                                       Placeholder="Soyadınız" 
+                                       BackgroundColor="Transparent"
+                                       TextColor="#333"
+                                       FontSize="16"/>
+                            </Frame>
+                        </VerticalStackLayout>
+
+                        <!-- TC Kimlik No -->
+                        <VerticalStackLayout Spacing="5">
+                            <Label Text="TC Kimlik No" FontSize="14" TextColor="#666" FontAttributes="Bold"/>
+                            <Frame BackgroundColor="#F8F9FA" CornerRadius="10" Padding="15,10" BorderColor="#E9ECEF">
+                                <Entry x:Name="TcNo" 
+                                       Placeholder="TC Kimlik No" 
+                                       BackgroundColor="Transparent"
+                                       TextColor="#333"
+                                       FontSize="16"/>
+                            </Frame>
+                        </VerticalStackLayout>
+
+                        <!-- E-posta -->
+                        <VerticalStackLayout Spacing="5">
+                            <Label Text="E-posta" FontSize="14" TextColor="#666" FontAttributes="Bold"/>
+                            <Frame BackgroundColor="#F8F9FA" CornerRadius="10" Padding="15,10" BorderColor="#E9ECEF">
+                                <Entry x:Name="Eposta" 
+                                       Placeholder="E-posta adresiniz" 
+                                       BackgroundColor="Transparent"
+                                       TextColor="#333"
+                                       FontSize="16"/>
+                            </Frame>
+                        </VerticalStackLayout>
+
+                        <!-- Telefon -->
+                        <VerticalStackLayout Spacing="5">
+                            <Label Text="Telefon" FontSize="14" TextColor="#666" FontAttributes="Bold"/>
+                            <Frame BackgroundColor="#F8F9FA" CornerRadius="10" Padding="15,10" BorderColor="#E9ECEF">
+                                <Entry x:Name="TelefonNo" 
+                                       Placeholder="Telefon numaranız" 
+                                       BackgroundColor="Transparent"
+                                       TextColor="#333"
+                                       FontSize="16"/>
+                            </Frame>
+                        </VerticalStackLayout>
+
+                        <!-- Doğum Tarihi -->
+                        <VerticalStackLayout Spacing="5">
+                            <Label Text="Doğum Tarihi" FontSize="14" TextColor="#666" FontAttributes="Bold"/>
+                            <Frame BackgroundColor="#F8F9FA" CornerRadius="10" Padding="15,10" BorderColor="#E9ECEF">
+                                <Entry x:Name="DogumTarihi" 
+                                       Placeholder="Doğum tarihiniz" 
+                                       BackgroundColor="Transparent"
+                                       TextColor="#333"
+                                       FontSize="16"/>
+                            </Frame>
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Sağ Panel - İş Bilgileri -->
+                <Frame Grid.Column="1" 
+                       BackgroundColor="White" 
+                       CornerRadius="15" 
+                       Padding="25"
+                       HasShadow="True">
+                    <VerticalStackLayout Spacing="15">
+                        <Label Text="İş Bilgileri" 
+                               FontSize="20" 
+                               FontAttributes="Bold" 
+                               TextColor="#4F3F9B"
+                               HorizontalOptions="Center"
+                               Margin="0,0,0,20"/>
+                        
+                        <!-- Departman -->
+                        <VerticalStackLayout Spacing="5">
+                            <Label Text="Departman" FontSize="14" TextColor="#666" FontAttributes="Bold"/>
+                            <Frame BackgroundColor="#F8F9FA" CornerRadius="10" Padding="15,10" BorderColor="#E9ECEF">
+                                <Entry x:Name="Depertman" 
+                                       Placeholder="Departmanınız" 
+                                       BackgroundColor="Transparent"
+                                       TextColor="#333"
+                                       FontSize="16"/>
+                            </Frame>
+                        </VerticalStackLayout>
+
+                        <!-- Pozisyon -->
+                        <VerticalStackLayout Spacing="5">
+                            <Label Text="Pozisyon" FontSize="14" TextColor="#666" FontAttributes="Bold"/>
+                            <Frame BackgroundColor="#F8F9FA" CornerRadius="10" Padding="15,10" BorderColor="#E9ECEF">
+                                <Entry x:Name="Pozisyon" 
+                                       Placeholder="Pozisyonunuz" 
+                                       BackgroundColor="Transparent"
+                                       TextColor="#333"
+                                       FontSize="16"/>
+                            </Frame>
+                        </VerticalStackLayout>
+
+                        <!-- Maaş -->
+                        <VerticalStackLayout Spacing="5">
+                            <Label Text="Maaş" FontSize="14" TextColor="#666" FontAttributes="Bold"/>
+                            <Frame BackgroundColor="#F8F9FA" CornerRadius="10" Padding="15,10" BorderColor="#E9ECEF">
+                                <Entry x:Name="maas" 
+                                       Placeholder="Maaşınız" 
+                                       BackgroundColor="Transparent"
+                                       TextColor="#333"
+                                       FontSize="16"/>
+                            </Frame>
+                        </VerticalStackLayout>
+
+                        <!-- İşe Başlama Tarihi -->
+                        <VerticalStackLayout Spacing="5">
+                            <Label Text="İşe Başlama Tarihi" FontSize="14" TextColor="#666" FontAttributes="Bold"/>
+                            <Frame BackgroundColor="#F8F9FA" CornerRadius="10" Padding="15,10" BorderColor="#E9ECEF">
+                                <Entry x:Name="IseBaslamaTarihi" 
+                                       Placeholder="İşe başlama tarihiniz" 
+                                       BackgroundColor="Transparent"
+                                       TextColor="#333"
+                                       FontSize="16"/>
+                            </Frame>
+                        </VerticalStackLayout>
+
+                        <!-- İzin Hakkı -->
+                        <VerticalStackLayout Spacing="5">
+                            <Label Text="Yıllık İzin Hakkı" FontSize="14" TextColor="#666" FontAttributes="Bold"/>
+                            <Frame BackgroundColor="#F8F9FA" CornerRadius="10" Padding="15,10" BorderColor="#E9ECEF">
+                                <Entry x:Name="izin" 
+                                       Placeholder="İzin hakkınız" 
+                                       BackgroundColor="Transparent"
+                                       TextColor="#333"
+                                       FontSize="16"/>
+                            </Frame>
+                        </VerticalStackLayout>
+
+                        <!-- Çalışma Durumu -->
+                        <VerticalStackLayout Spacing="5">
+                            <Label Text="Çalışma Durumu" FontSize="14" TextColor="#666" FontAttributes="Bold"/>
+                            <Frame BackgroundColor="#F8F9FA" CornerRadius="10" Padding="15,10" BorderColor="#E9ECEF">
+                                <Entry x:Name="aktif" 
+                                       Placeholder="Çalışma durumunuz" 
+                                       BackgroundColor="Transparent"
+                                       TextColor="#333"
+                                       FontSize="16"/>
+                            </Frame>
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+            </Grid>
+
+            <!-- Alt Panel - İşlemler -->
+            <Frame Grid.Row="2" 
+                   BackgroundColor="White" 
+                   CornerRadius="15" 
+                   Padding="25"
+                   Margin="0,20,0,0"
+                   HasShadow="True">
+                <VerticalStackLayout Spacing="15">
+                    <Label Text="İşlemler" 
+                           FontSize="20" 
+                           FontAttributes="Bold" 
+                           TextColor="#4F3F9B"
+                           HorizontalOptions="Center"
+                           Margin="0,0,0,20"/>
+                    
+                    <!-- Butonlar -->
+                    <Grid ColumnDefinitions="*,*,*,*,*,*" ColumnSpacing="15">
+                        <Button x:Name="getir"
+                                Grid.Column="0"
+                                Text="Bilgilerimi Getir"
+                                BackgroundColor="#4F3F9B"
+                                TextColor="White"
+                                CornerRadius="10"
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                Padding="20,15"
+                                Clicked="getir_Clicked"/>
+                        
+                        <Button x:Name="SıfreDegıstır"
+                                Grid.Column="1"
+                                Text="Şifre Değiştir"
+                                BackgroundColor="#28A745"
+                                TextColor="White"
+                                CornerRadius="10"
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                Padding="20,15"
+                                Clicked="SifreDegistir_Clicked"/>
+                        
+                        <Button x:Name="SifreDegistir2"
+                                Grid.Column="2"
+                                Text="Şifre Değiştir 2"
+                                BackgroundColor="#6F42C1"
+                                TextColor="White"
+                                CornerRadius="10"
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                Padding="20,15"
+                                Clicked="SifreDegistir2_Clicked"/>
+                        
+                        <Button x:Name="talepEt"
+                                Grid.Column="3"
+                                Text="İzin Talep Et"
+                                BackgroundColor="#FFC107"
+                                TextColor="White"
+                                CornerRadius="10"
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                Padding="20,15"
+                                Clicked="talepEt_Clicked"/>
+                        
+                        <Button x:Name="aktifOl"
+                                Grid.Column="4"
+                                Text="İzinden Dönüş"
+                                BackgroundColor="#17A2B8"
+                                TextColor="White"
+                                CornerRadius="10"
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                Padding="20,15"
+                                Clicked="aktifOl_Clicked"/>
+                        
+                        <Button x:Name="cikisYap"
+                                Grid.Column="5"
+                                Text="Çıkış Yap"
+                                BackgroundColor="#DC3545"
+                                TextColor="White"
+                                CornerRadius="10"
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                Padding="20,15"
+                                Clicked="CikisYap_Clicked"/>
+                    </Grid>
+
+                    <!-- İşten Ayrılma Bölümü -->
+                    <Frame BackgroundColor="#FFF3CD" 
+                           CornerRadius="10" 
+                           Padding="20"
+                           Margin="0,20,0,0"
+                           BorderColor="#FFEAA7">
+                        <VerticalStackLayout Spacing="15">
+                            <Label Text="İşten Ayrılma İşlemi" 
+                                   FontSize="18" 
+                                   FontAttributes="Bold" 
+                                   TextColor="#856404"
+                                   HorizontalOptions="Center"/>
+                            
+                            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="15">
+                                <Button Grid.Column="0"
+                                        Text="İşten Ayrıl"
+                                        BackgroundColor="#DC3545"
+                                        TextColor="White"
+                                        CornerRadius="10"
+                                        FontAttributes="Bold"
+                                        FontSize="16"
+                                        Padding="20,15"
+                                        Clicked="Button_Clicked"/>
+                                
+                                <VerticalStackLayout Grid.Column="1" Spacing="5">
+                                    <Label Text="İstenilen İzin Günü:" 
+                                           FontSize="14" 
+                                           TextColor="#856404" 
+                                           FontAttributes="Bold"/>
+                                    <Entry x:Name="istenilenMiktar"
+                                           Placeholder="Gün miktarı" 
+                                           BackgroundColor="White"
+                                           TextColor="#333"
+                                           FontSize="16"
+                                           WidthRequest="150"/>
+                                </VerticalStackLayout>
+                            </Grid>
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <Frame BackgroundColor="#E2E3E5" 
+                           CornerRadius="10" 
+                           Padding="20"
+                           Margin="0,20,0,0"
+                           BorderColor="#D6D8DB">
+                        <VerticalStackLayout Spacing="15">
+                            <Label Text="Şifre Değiştirme" 
+                                   FontSize="18" 
+                                   FontAttributes="Bold" 
+                                   TextColor="#495057"
+                                   HorizontalOptions="Center"/>
+                            
+                            <Grid ColumnDefinitions="*,*,*" ColumnSpacing="15">
+                                <VerticalStackLayout Grid.Column="0" Spacing="5">
+                                    <Label Text="Eski Şifre" FontSize="14" TextColor="#495057" FontAttributes="Bold"/>
+                                    <Entry x:Name="eskiSifre" 
+                                           Placeholder="Eski şifreniz" 
+                                           IsPassword="True"
+                                           BackgroundColor="White"
+                                           TextColor="#333"
+                                           FontSize="16"/>
+                                </VerticalStackLayout>
+                                
+                                <VerticalStackLayout Grid.Column="1" Spacing="5">
+                                    <Label Text="Yeni Şifre" FontSize="14" TextColor="#495057" FontAttributes="Bold"/>
+                                    <Entry x:Name="yeniSifre" 
+                                           Placeholder="Yeni şifreniz" 
+                                           IsPassword="True"
+                                           BackgroundColor="White"
+                                           TextColor="#333"
+                                           FontSize="16"/>
+                                </VerticalStackLayout>
+                                
+                                <VerticalStackLayout Grid.Column="2" Spacing="5">
+                                    <Label Text="Şifre Tekrar" FontSize="14" TextColor="#495057" FontAttributes="Bold"/>
+                                    <Entry x:Name="tekrardanYeniSifre" 
+                                           Placeholder="Şifre tekrarı" 
+                                           IsPassword="True"
+                                           BackgroundColor="White"
+                                           TextColor="#333"
+                                           FontSize="16"/>
+                                </VerticalStackLayout>
+                            </Grid>
+                        </VerticalStackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+            </Frame>
+        </Grid>
+    </ScrollView>
+</ContentPage>

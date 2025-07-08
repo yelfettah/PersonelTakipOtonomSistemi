@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PersonelTakipOtonomSistemi.Views.LoginViews"
+             BackgroundColor="#F6F6F6">
+    <Grid Padding="30">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Sol tarafta görsel -->
+        <Frame Grid.Column="0" CornerRadius="20" HasShadow="False" Padding="0" Margin="0,20,20,20">
+            <Image Source="personel.png" Aspect="AspectFill"/>
+        </Frame>
+
+        <!-- Sağ tarafta giriş formu -->
+        <Frame Grid.Column="1" CornerRadius="20" HasShadow="True" BackgroundColor="White" Padding="40" Margin="0,20,0,20">
+            <VerticalStackLayout Spacing="25">
+                <Label Text="Hoş Geldiniz" FontSize="32" FontAttributes="Bold" HorizontalOptions="Center"/>
+                <Label Text="Personel Takip Sistemine Giriş Yapın" FontSize="18" TextColor="#7B7B7B" HorizontalOptions="Center"/>
+                
+                <Entry Placeholder="TC Kimlik Numarası giriniz"
+                       x:Name="tcEntry"
+                       Keyboard="Numeric"
+                       HeightRequest="50"
+                       BackgroundColor="#F6F8FC"
+                       Margin="0,20,0,0"
+                       FontSize="16"
+                       TextColor="Black"
+                       PlaceholderColor="#B0B0B0"
+                       HorizontalOptions="FillAndExpand"
+                       />
+
+                <Entry Placeholder="Şifrenizi giriniz"
+                       x:Name="sifreEntry"
+                       IsPassword="True"
+                       HeightRequest="50"
+                       BackgroundColor="#F6F8FC"
+                       FontSize="16"
+                       TextColor="Black"
+                       PlaceholderColor="#B0B0B0"
+                       HorizontalOptions="FillAndExpand"
+                       />
+
+                <Button Text="GİRİŞ YAP"
+                        Clicked="Button_Clicked"
+                        BackgroundColor="#5A7DFF"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        CornerRadius="10"
+                        HeightRequest="50"
+                        FontSize="18"
+                        />
+
+            </VerticalStackLayout>
+        </Frame>
+    </Grid>
+</ContentPage>

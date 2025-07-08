@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PersonelTakipOtonomSistemi.Views.IstenAyrılma"
+             Title="İşten Ayrılma"
+             BackgroundColor="#F5F5F5"
+             Loaded="ContentPage_Loaded">
+
+    <Grid RowDefinitions="Auto,*" Padding="20">
+        
+        <Frame Grid.Row="0" 
+               BackgroundColor="#DC3545" 
+               CornerRadius="15" 
+               Margin="0,20,0,20"
+               Padding="25,15"
+               HasShadow="True">
+            <HorizontalStackLayout>
+                <Image Source="delete.png" WidthRequest="40" HeightRequest="40" VerticalOptions="Center"/>
+                <Label Text="İŞTEN AYRILMA TALEBİ" 
+                       Margin="15,0,0,0"
+                       TextColor="White" 
+                       FontAttributes="Bold" 
+                       FontSize="20"
+                       VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+        </Frame>
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Spacing="20">
+                
+                <Frame BackgroundColor="#FFF3CD" 
+                       CornerRadius="10" 
+                       Padding="20"
+                       BorderColor="#FFC107">
+                    <HorizontalStackLayout>
+                        <Label Text="⚠️" FontSize="24" VerticalOptions="Center"/>
+                        <VerticalStackLayout Margin="15,0,0,0">
+                            <Label Text="DİKKAT!" 
+                                   FontSize="16" 
+                                   FontAttributes="Bold" 
+                                   TextColor="#856404"/>
+                            <Label Text="Bu işlem geri alınamaz. İşten ayrılma talebiniz onaylandıktan sonra hesabınız pasif hale getirilecektir." 
+                                   FontSize="14" 
+                                   TextColor="#856404"/>
+                        </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                </Frame>
+
+                <Frame BackgroundColor="White" 
+                       CornerRadius="15" 
+                       Padding="25"
+                       HasShadow="True">
+                    <VerticalStackLayout Spacing="15">
+                        <Label Text="Personel Bilgileri" 
+                               FontSize="18" 
+                               FontAttributes="Bold" 
+                               TextColor="#DC3545"
+                               Margin="0,0,0,10"/>
+                        
+                        <Grid ColumnDefinitions="*,*" ColumnSpacing="15">
+                            <!-- Sol Kolon -->
+                            <VerticalStackLayout Grid.Column="0" Spacing="12">
+                                <Frame BackgroundColor="#F8F9FA" CornerRadius="8" Padding="15,10" BorderColor="#E9ECEF">
+                                    <Grid ColumnDefinitions="Auto,*">
+                                        <Label Grid.Column="0" Text="👤 Ad:" FontSize="14" TextColor="#666" FontAttributes="Bold"/>
+                                        <Entry Grid.Column="1" x:Name="kullanıcıAdı" FontSize="14" TextColor="#333" IsReadOnly="True"/>
+                                    </Grid>
+                                </Frame>
+                                
+                                <Frame BackgroundColor="#F8F9FA" CornerRadius="8" Padding="15,10" BorderColor="#E9ECEF">
+                                    <Grid ColumnDefinitions="Auto,*">
+                                        <Label Grid.Column="0" Text="👤 Soyad:" FontSize="14" TextColor="#666" FontAttributes="Bold"/>
+                                        <Entry Grid.Column="1" x:Name="kullanıcıSoyadı" FontSize="14" TextColor="#333" IsReadOnly="True"/>
+                                    </Grid>
+                                </Frame>
+                                
+                                <Frame BackgroundColor="#F8F9FA" CornerRadius="8" Padding="15,10" BorderColor="#E9ECEF">
+                                    <Grid ColumnDefinitions="Auto,*">
+                                        <Label Grid.Column="0" Text="�� TC No:" FontSize="14" TextColor="#666" FontAttributes="Bold"/>
+                                        <Entry Grid.Column="1" x:Name="kullanıcıTcNo" FontSize="14" TextColor="#333" IsReadOnly="True"/>
+                                    </Grid>
+                                </Frame>
+                                
+                                <Frame BackgroundColor="#F8F9FA" CornerRadius="8" Padding="15,10" BorderColor="#E9ECEF">
+                                    <Grid ColumnDefinitions="Auto,*">
+                                        <Label Grid.Column="0" Text="🎂 Doğum Tarihi:" FontSize="14" TextColor="#666" FontAttributes="Bold"/>
+                                        <Entry Grid.Column="1" x:Name="kullanıcıDogumTarihi" FontSize="14" TextColor="#333" IsReadOnly="True"/>
+                                    </Grid>
+                                </Frame>
+                            </VerticalStackLayout>
+
+                            <!-- Sağ Kolon -->
+                            <VerticalStackLayout Grid.Column="1" Spacing="12">
+                                <Frame BackgroundColor="#F8F9FA" CornerRadius="8" Padding="15,10" BorderColor="#E9ECEF">
+                                    <Grid ColumnDefinitions="Auto,*">
+                                        <Label Grid.Column="0" Text="🆔 Personel ID:" FontSize="14" TextColor="#666" FontAttributes="Bold"/>
+                                        <Entry Grid.Column="1" x:Name="kullanıcıPersonelId" FontSize="14" TextColor="#333" IsReadOnly="True"/>
+                                    </Grid>
+                                </Frame>
+                                
+                                <Frame BackgroundColor="#F8F9FA" CornerRadius="8" Padding="15,10" BorderColor="#E9ECEF">
+                                    <Grid ColumnDefinitions="Auto,*">
+                                        <Label Grid.Column="0" Text="🏢 Departman:" FontSize="14" TextColor="#666" FontAttributes="Bold"/>
+                                        <Entry Grid.Column="1" x:Name="kullanıcıDepertman" FontSize="14" TextColor="#333" IsReadOnly="True"/>
+                                    </Grid>
+                                </Frame>
+                                
+                                <Frame BackgroundColor="#F8F9FA" CornerRadius="8" Padding="15,10" BorderColor="#E9ECEF">
+                                    <Grid ColumnDefinitions="Auto,*">
+                                        <Label Grid.Column="0" Text="💼 Pozisyon:" FontSize="14" TextColor="#666" FontAttributes="Bold"/>
+                                        <Entry Grid.Column="1" x:Name="kullanıcıPozisyon" FontSize="14" TextColor="#333" IsReadOnly="True"/>
+                                    </Grid>
+                                </Frame>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Frame BackgroundColor="White" 
+                       CornerRadius="15" 
+                       Padding="25"
+                       HasShadow="True">
+                    <VerticalStackLayout Spacing="15">
+                        <Label Text="Onay Koşulları" 
+                               FontSize="18" 
+                               FontAttributes="Bold" 
+                               TextColor="#DC3545"
+                               Margin="0,0,0,10"/>
+                        
+                        <Frame BackgroundColor="#F8F9FA" CornerRadius="8" Padding="15,10" BorderColor="#E9ECEF">
+                            <HorizontalStackLayout>
+                                <CheckBox x:Name="onay1" Color="#DC3545" VerticalOptions="Center"/>
+                                <Label Text="İşten ayrılmak istediğimi onaylıyorum" 
+                                       FontSize="14" 
+                                       TextColor="#333" 
+                                       VerticalOptions="Center"
+                                       Margin="10,0,0,0"/>
+                            </HorizontalStackLayout>
+                        </Frame>
+                        
+                        <Frame BackgroundColor="#F8F9FA" CornerRadius="8" Padding="15,10" BorderColor="#E9ECEF">
+                            <HorizontalStackLayout>
+                                <CheckBox x:Name="onay2" Color="#DC3545" VerticalOptions="Center"/>
+                                <Label Text="Bütün koşulları kabul ediyorum" 
+                                       FontSize="14" 
+                                       TextColor="#333" 
+                                       VerticalOptions="Center"
+                                       Margin="10,0,0,0"/>
+                            </HorizontalStackLayout>
+                        </Frame>
+                        
+                        <Frame BackgroundColor="#F8F9FA" CornerRadius="8" Padding="15,10" BorderColor="#E9ECEF">
+                            <HorizontalStackLayout>
+                                <CheckBox x:Name="onay3" Color="#DC3545" VerticalOptions="Center"/>
+                                <Label Text="Kendi rızamla ayrılıyorum" 
+                                       FontSize="14" 
+                                       TextColor="#333" 
+                                       VerticalOptions="Center"
+                                       Margin="10,0,0,0"/>
+                            </HorizontalStackLayout>
+                        </Frame>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Ayrılma Butonu -->
+                <Frame BackgroundColor="#DC3545" 
+                       CornerRadius="15" 
+                       Padding="0"
+                       HasShadow="True"
+                       Margin="0,20,0,0">
+                    <Button Text="İŞTEN AYRIL" 
+                            BackgroundColor="Transparent"
+                            TextColor="White"
+                            FontSize="18"
+                            FontAttributes="Bold"
+                            CornerRadius="15"
+                            Padding="30,15"
+                            Clicked="Button_Clicked"/>
+                </Frame>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
